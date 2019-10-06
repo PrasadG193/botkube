@@ -11,9 +11,9 @@ import (
 	"github.com/infracloudio/botkube/pkg/utils"
 	"github.com/infracloudio/botkube/test/e2e/command"
 	"github.com/infracloudio/botkube/test/e2e/env"
-	"github.com/infracloudio/botkube/test/e2e/filters"
-	"github.com/infracloudio/botkube/test/e2e/notifier/create"
-	"github.com/infracloudio/botkube/test/e2e/welcome"
+	//"github.com/infracloudio/botkube/test/e2e/filters"
+	//"github.com/infracloudio/botkube/test/e2e/notifier/create"
+	//"github.com/infracloudio/botkube/test/e2e/welcome"
 )
 
 // TestRun run e2e integration tests
@@ -49,7 +49,7 @@ func TestRun(t *testing.T) {
 
 	// Start controller with fake notifiers
 	go controller.RegisterInformers(testEnv.Config, notifiers)
-	t.Run("Welcome", welcome.E2ETests(testEnv))
+	//t.Run("Welcome", welcome.E2ETests(testEnv))
 
 	if testEnv.Config.Communications.Slack.Enabled {
 		// Start fake Slack bot
@@ -60,9 +60,9 @@ func TestRun(t *testing.T) {
 
 	// Make test suite
 	suite := map[string]env.E2ETest{
-		"notifier": create.E2ETests(testEnv),
+		//"notifier": create.E2ETests(testEnv),
 		"command":  command.E2ETests(testEnv),
-		"filters":  filters.E2ETests(testEnv),
+		//"filters":  filters.E2ETests(testEnv),
 	}
 
 	// Run test suite

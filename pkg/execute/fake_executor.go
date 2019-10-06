@@ -5,6 +5,8 @@ package execute
 import (
 	"fmt"
 	"strings"
+
+	"github.com/infracloudio/botkube/test/e2e/utils"
 )
 
 // K8sVersion fake version send in ping response
@@ -15,6 +17,8 @@ var KubectlResponse = map[string]string{
 	"-n default get pods": "NAME                           READY   STATUS    RESTARTS   AGE\n" +
 		"nginx-xxxxxxx-yyyyyyy          1/1     Running   1          1d",
 	"-c " + kubectlBinary + " version --short=true | grep Server": fmt.Sprintf("Server Version: %s\n", K8sVersion),
+
+	"-n default logs jenkins": utils.ReadTestData(utils.SAMPLELOGS),
 }
 
 // FakeRunner mocks Run

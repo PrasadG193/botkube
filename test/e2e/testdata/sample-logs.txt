@@ -1,0 +1,85 @@
+Running from: /usr/share/jenkins/jenkins.war
+webroot: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Oct 06, 2019 2:33:41 PM Main deleteWinstoneTempContents
+WARNING: Failed to delete the temporary Winstone file /tmp/winstone/jenkins.war
+Oct 06, 2019 2:33:42 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Logging initialized @1813ms
+Oct 06, 2019 2:33:42 PM winstone.Logger logInternal
+INFO: Beginning extraction from war file
+Oct 06, 2019 2:33:48 PM org.eclipse.jetty.util.log.JavaUtilLog warn
+WARNING: Empty contextPath
+Oct 06, 2019 2:33:48 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: jetty-9.2.z-SNAPSHOT
+Oct 06, 2019 2:33:52 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+Oct 06, 2019 2:33:57 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Started w.@47404bea{/,file:/var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+Oct 06, 2019 2:33:57 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Started ServerConnector@1c80e49b{HTTP/1.1}{0.0.0.0:8080}
+Oct 06, 2019 2:33:57 PM org.eclipse.jetty.util.log.JavaUtilLog info
+INFO: Started @17136ms
+Oct 06, 2019 2:33:57 PM winstone.Logger logInternal
+INFO: Winstone Servlet Engine v2.0 running: controlPort=disabled
+Oct 06, 2019 2:33:59 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Oct 06, 2019 2:33:59 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Oct 06, 2019 2:34:02 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Oct 06, 2019 2:34:02 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Oct 06, 2019 2:34:02 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Oct 06, 2019 2:34:07 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Oct 06, 2019 2:34:07 PM hudson.model.AsyncPeriodicWork$1 run
+INFO: Started Download metadata
+Oct 06, 2019 2:34:08 PM jenkins.util.groovy.GroovyHookScript execute
+INFO: Executing /var/jenkins_home/init.groovy.d/tcp-slave-agent-port.groovy
+Oct 06, 2019 2:34:08 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Oct 06, 2019 2:34:09 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@2fc58805: display name [Root WebApplicationContext]; startup date [Sun Oct 06 14:34:09 UTC 2019]; root of context hierarchy
+Oct 06, 2019 2:34:09 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+INFO: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@2fc58805]: org.springframework.beans.factory.support.DefaultListableBeanFactory@2d12e416
+Oct 06, 2019 2:34:09 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2d12e416: defining beans [authenticationManager]; root of factory hierarchy
+Oct 06, 2019 2:34:10 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.web.context.support.StaticWebApplicationContext@2465805a: display name [Root WebApplicationContext]; startup date [Sun Oct 06 14:34:10 UTC 2019]; root of context hierarchy
+Oct 06, 2019 2:34:10 PM org.springframework.context.support.AbstractApplicationContext obtainFreshBeanFactory
+INFO: Bean factory for application context [org.springframework.web.context.support.StaticWebApplicationContext@2465805a]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1daacc97
+Oct 06, 2019 2:34:10 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1daacc97: defining beans [filter,legacy]; root of factory hierarchy
+Oct 06, 2019 2:34:10 PM jenkins.install.SetupWizard init
+INFO: 
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+3f03d4a64b2a4324a1f18934e43b74b0
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+--> setting agent port for jnlp
+--> setting agent port for jnlp... done
+Oct 06, 2019 2:34:30 PM hudson.model.UpdateSite updateData
+INFO: Obtained the latest update center data file for UpdateSource default
+Oct 06, 2019 2:34:31 PM hudson.model.DownloadService$Downloadable load
+INFO: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+Oct 06, 2019 2:34:31 PM hudson.model.UpdateSite updateData
+INFO: Obtained the latest update center data file for UpdateSource default
+Oct 06, 2019 2:34:31 PM hudson.WebAppMain$3 run
+INFO: Jenkins is fully up and running
+Oct 06, 2019 2:34:34 PM hudson.model.DownloadService$Downloadable load
+INFO: Obtained the updated data file for hudson.tools.JDKInstaller
+Oct 06, 2019 2:34:34 PM hudson.model.AsyncPeriodicWork$1 run
+INFO: Finished Download metadata. 27,463 ms

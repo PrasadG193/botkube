@@ -1,7 +1,10 @@
 package utils
 
 import (
+	"log"
 	"testing"
+	"io/ioutil"
+	"path/filepath"
 
 	"github.com/infracloudio/botkube/pkg/config"
 	"github.com/infracloudio/botkube/pkg/notify"
@@ -10,6 +13,13 @@ import (
 	v1 "k8s.io/api/core/v1"
 	extV1beta1 "k8s.io/api/extensions/v1beta1"
 	"k8s.io/apimachinery/pkg/runtime"
+)
+
+const (
+	// TESTDATA contains path to the dir where test data is stored
+	TESTDATA = "testdata"
+	// SAMPLELOGS contains sample logs for test cases
+	SAMPLELOGS = "sample-logs.txt"
 )
 
 // SlackMessage structure
@@ -57,4 +67,14 @@ func CreateResource(t *testing.T, obj CreateObjects) {
 			t.Fatalf("Failed to create service: %v", err)
 		}
 	}
+}
+
+// ReadTestData reads content of files in testdata and returns output in string format
+func ReadTestData(filename string) string {
+	filePath, _ := filepath.Abs(TESTDATA + "/" + filename)
+	logs, err := ioutil.ReadFile(filePath)
+	if err != nil {
+		log.Fatalf("Failed to read testdata file %s: %v", filePath, err)
+	}
+	return string(logs)
 }

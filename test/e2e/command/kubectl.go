@@ -28,6 +28,11 @@ func (c *context) testKubectlCommand(t *testing.T) {
 			command:  "get pods",
 			expected: fmt.Sprintf("```Cluster: %s\n%s```", c.Config.Settings.ClusterName, execute.KubectlResponse["-n default get pods"]),
 		},
+		"BotKube logs": {
+			command:  "logs jenkins",
+			expected: fmt.Sprintf("```Cluster: %s\n%s```", c.Config.Settings.ClusterName, execute.KubectlResponse["-n default logs jenkins"]),
+		},
+
 	}
 
 	for name, test := range tests {
