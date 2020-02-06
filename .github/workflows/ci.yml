@@ -12,6 +12,7 @@ jobs:
       uses: actions/setup-go@v1
       with:
         go-version: 1.13
+      run: export GO111MODULE=on
     - name: Check go env.
       run: |
         echo $GO111MODULE
