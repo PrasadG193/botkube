@@ -14,17 +14,22 @@ jobs:
       uses: actions/setup-go@v1
       with:
         go-version: 1.13
-#       env:
-#         GO111MODULE: on
-    - name: Check go env.
-#       env:
-#         GO111MODULE: on
+    - name: install golint and helm
       run: |
-        echo $GO111MODULE
+        go get -u golang.org/x/lint/golint
+        curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
+        chmod +x get_helm.sh
+        ./get_helm.sh
+    - name: Before build
+      run: |
+        hack/verify-gofmt.sh
+        hack/verify-govet.sh
+        hack/verify-golint.sh
+        go mod verify
+        helm lint helm/botkube
     - name: make test, make build, make docker-image
       if: success()
       run: 
-          echo GO111MODULE is on by default
         # make test
         # make
         # make container-image
@@ -34,4 +39,3 @@ jobs:
         echo github.event_name - ${{ github.event_name }}
         echo github.ref -branch or tag - ${{ github.ref }} 
         echo github.head_ref - source branch - ${{ github.head_ref }} 
-
