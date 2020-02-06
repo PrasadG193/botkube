@@ -15,11 +15,11 @@ jobs:
     - name: make test, make build, make docker-image
       run: |
         make test
-        make
-        make container-image
+        # make
+        # make container-image
     - name: Identify the event info
       run: |
         echo github.event_name - ${{ github.event_name }}
-        echo github.ref (branch or tag )- ${{ github.ref }} 
-        echo github.head_ref (source branch )- ${{ github.head_ref }} 
+        echo github.ref -branch or tag - ${{ github.ref }} 
+        echo github.head_ref - source branch - ${{ github.head_ref }} 
 
