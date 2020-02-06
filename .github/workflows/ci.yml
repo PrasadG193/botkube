@@ -16,7 +16,7 @@ jobs:
       run: |
         echo $GO111MODULE
     - name: make test, make build, make docker-image
-      if: $GO111MODULE == "on"
+      if: success()
       run: 
           echo GO111MODULE is on by default
         # make test
