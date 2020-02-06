@@ -19,9 +19,6 @@ jobs:
       if: $GO111MODULE == "on"
       run: 
           echo GO111MODULE is on by default
-      else:
-      run: |
-          echo GO111MODULE is off by default
         # make test
         # make
         # make container-image
