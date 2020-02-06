@@ -16,15 +16,15 @@ jobs:
         go-version: 1.13
     - name: install golint and helm
       run: |
-        go get -u golang.org/x/lint/golint
         curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
         chmod +x get_helm.sh
         ./get_helm.sh
     - name: Before build
       run: |
-        hack/verify-gofmt.sh
-        hack/verify-govet.sh
-        hack/verify-golint.sh
+        go get -u golang.org/x/lint/golint
+        ./hack/verify-gofmt.sh
+        ./hack/verify-govet.sh
+        ./hack/verify-golint.sh
         go mod verify
         helm lint helm/botkube
     - name: make test, make build, make docker-image
