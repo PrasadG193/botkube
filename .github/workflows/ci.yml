@@ -30,9 +30,9 @@ jobs:
     - name: make test, make build, make docker-image
       if: success()
       run: 
-        # make test
-        # make
-        # make container-image
+        make test
+        make
+        make container-image
     - name: Identify the event info
       if: success()
       run: |
