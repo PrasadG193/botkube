@@ -22,6 +22,7 @@ jobs:
     - name: Before build
       run: |
         go get -u golang.org/x/lint/golint
+        echo $GOPATH
         ./hack/verify-gofmt.sh
         ./hack/verify-govet.sh
         ./hack/verify-golint.sh
